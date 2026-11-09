@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EdTech Curriculum Delivery Modality & Statistical Testing Standards</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            background-color: #f8fafc;
+        }
+        header {
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #0f172a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+        }
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        section {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #1e40af;
+            font-size: 18px;
+            margin-top: 0;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13.5px;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f8fafc;
+        }
+        .formula-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 16px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            margin: 12px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .highlight-green {
+            color: #15803d;
+            font-weight: bold;
+        }
+        .highlight-red {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span class="badge">A/B/n Experimentation Framework</span>
+    <h1>EdTech Content Delivery Modality & Statistical Testing Standards</h1>
+    <div class="subtitle">Platform Optimization Research Documentation | Senior Product Data Scientist</div>
+</header>
+
+<section>
+    <h2>1. Empirical Content Modality Completion Baselines</h2>
+    <p>Empirical benchmarks across digital learning platforms (Coursera, MOOC research, Duolingo) indicate that traditional long-form video lectures suffer catastrophic attrition within the first 6–10 minutes. Breaking curriculum into modular chunks with formative retrieval checkpoints significantly increases course completion and conceptual retention.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Delivery Format</th>
+                <th>Format Description</th>
+                <th>Industry Baseline Completion</th>
+                <th>Cognitive Drivers & Funnel Dynamics</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Control (Long Video)</strong></td>
+                <td>Monolithic 30–50m lecture video</td>
+                <td><span class="highlight-red">10% – 20%</span></td>
+                <td>Severe attention decay after 6m; high passive multitasking and drop-off.</td>
+            </tr>
+            <tr>
+                <td><strong>Variant B (Micro-Video)</strong></td>
+                <td>Chunked 3–6m modular videos</td>
+                <td><span class="highlight-green">65% – 75%</span></td>
+                <td>Low friction per session; accommodates fragmented daily learner schedules.</td>
+            </tr>
+            <tr>
+                <td><strong>Variant C (Micro-Quiz)</strong></td>
+                <td>Micro-video + in-video mini quizzes</td>
+                <td><span class="highlight-green">75% – 85%</span></td>
+                <td>Active recall testing effect; formative commitment prevents dropout.</td>
+            </tr>
+            <tr>
+                <td><strong>Variant D (Shorts + Project)</strong></td>
+                <td>60–90s shorts + take-home project</td>
+                <td><span class="highlight-red">25% – 42%</span></td>
+                <td>High initial watch rate, but submission barrier induces steep mobile drop-off.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>2. Primary Hypothesis Formulation: Two-Sample Proportion Z-Test</h2>
+    <p>To evaluate whether Challenger Variants (B, C, D) produce statistically significant uplifts in Module Completion Rate over Control (A):</p>
+    <div class="formula-box">
+        H0: p_variant = p_control  vs  H1: p_variant > p_control<br><br>
+        Z = (p_variant - p_control) / sqrt( p_pool * (1 - p_pool) * (1/n1 + 1/n2) )<br>
+        where p_pool = (x_control + x_variant) / (n_control + n_variant)
+    </div>
+    <p>Target Significance Level: <strong>α = 0.01</strong>. Minimum Detectable Effect (MDE) with N=1,000 per arm: <strong>4.8%</strong> (at 80% statistical power).</p>
+</section>
+
+<section>
+    <h2>3. Multiple Testing Correction: Bonferroni & Holm Step-Down</h2>
+    <p>Because 3 challenger variants are evaluated simultaneously against a single control, testing each arm at unadjusted α = 0.01 inflates Family-Wise Error Rate (FWER) to 1 - (1 - 0.01)^3 ≈ 0.0297 (~3%).</p>
+    <ul>
+        <li><strong>Standard Bonferroni:</strong> α_adj = α / k = 0.01 / 3 = <strong>0.0033</strong></li>
+        <li><strong>Holm-Bonferroni (Step-Down):</strong> Rank p-values p(1) ≤ p(2) ≤ p(3). Test p(i) ≤ α / (k - i + 1). Thresholds: <strong>0.0033</strong>, <strong>0.0050</strong>, <strong>0.0100</strong>.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>4. Secondary Hypothesis: Welch's t-Test for Knowledge Retention</h2>
+    <p>Post-assessment scores (0–100) exhibit unequal variance across formats due to varying degrees of active participation. Standard Student's t-test assumes homoscedasticity; therefore, Welch's t-test with Satterthwaite degrees of freedom is required:</p>
+    <div class="formula-box">
+        t = (x̄_variant - x̄_control) / sqrt( s1^2 / n1 + s2^2 / n2 )
+    </div>
+</section>
+
+</body>
+</html>

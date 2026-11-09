@@ -1,0 +1,67 @@
+"""
+Generate content module catalog for the content optimization experiment.
+Maps 20 syllabus modules across 4 subjects to their format specifications.
+"""
+
+import csv
+
+MODULES = [
+    # Data Science & ML
+    ("DS-101", "Data Science & ML", "Gradient Descent & Cost Functions", "Foundational", 45, 4, 3, 1),
+    ("DS-102", "Data Science & ML", "Convolutional Neural Networks", "Intermediate", 50, 5, 4, 1),
+    ("DS-103", "Data Science & ML", "Decision Trees & Random Forests", "Foundational", 38, 4, 3, 1),
+    ("DS-104", "Data Science & ML", "Transformers & Attention Mechanisms", "Advanced", 55, 6, 5, 1),
+    ("DS-105", "Data Science & ML", "Hyperparameter Tuning with Optuna", "Intermediate", 40, 4, 4, 1),
+    
+    # Full Stack Web
+    ("FS-201", "Full Stack Web", "Asynchronous JavaScript & Event Loop", "Foundational", 35, 4, 3, 1),
+    ("FS-202", "Full Stack Web", "State Management with React Redux", "Intermediate", 42, 5, 4, 1),
+    ("FS-203", "Full Stack Web", "Database Indexing & Query Tuning", "Advanced", 48, 5, 4, 1),
+    ("FS-204", "Full Stack Web", "REST vs GraphQL API Architecture", "Intermediate", 36, 4, 3, 1),
+    ("FS-205", "Full Stack Web", "WebSocket Real-time Communication", "Advanced", 45, 5, 4, 1),
+
+    # Cloud Engineering
+    ("CE-301", "Cloud Engineering", "Docker Container Lifecycle & Networking", "Foundational", 40, 4, 3, 1),
+    ("CE-302", "Cloud Engineering", "Kubernetes Pod Orchestration & Services", "Intermediate", 52, 6, 5, 1),
+    ("CE-303", "Cloud Engineering", "Terraform Infrastructure as Code", "Intermediate", 44, 5, 4, 1),
+    ("CE-304", "Cloud Engineering", "AWS IAM Security & Least Privilege", "Foundational", 35, 4, 3, 1),
+    ("CE-305", "Cloud Engineering", "CI/CD Pipeline Deployment with GitHub Actions", "Advanced", 48, 5, 4, 1),
+
+    # Product Management
+    ("PM-401", "Product Management", "Defining North Star Metrics & OKRs", "Foundational", 32, 3, 3, 1),
+    ("PM-402", "Product Management", "A/B Testing Hypothesis Formulation", "Intermediate", 38, 4, 4, 1),
+    ("PM-403", "Product Management", "User Journey Mapping & Drop-off Funnels", "Foundational", 35, 4, 3, 1),
+    ("PM-404", "Product Management", "Pricing Strategies & Monetization Models", "Advanced", 45, 5, 4, 1),
+    ("PM-405", "Product Management", "Product Requirements Document (PRD) Writing", "Intermediate", 40, 4, 4, 1),
+]
+
+fieldnames = [
+    "module_id",
+    "subject_domain",
+    "module_title",
+    "difficulty_level",
+    "long_video_duration_mins",
+    "micro_chunks_count",
+    "quiz_questions_count",
+    "takehome_project_count"
+]
+
+rows = []
+for m in MODULES:
+    rows.append({
+        "module_id": m[0],
+        "subject_domain": m[1],
+        "module_title": m[2],
+        "difficulty_level": m[3],
+        "long_video_duration_mins": m[4],
+        "micro_chunks_count": m[5],
+        "quiz_questions_count": m[6],
+        "takehome_project_count": m[7]
+    })
+
+with open("content_modules_catalog.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(rows)
+
+print(f"Generated {len(rows)} course modules in content_modules_catalog.csv")

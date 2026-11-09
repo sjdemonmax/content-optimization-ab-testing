@@ -1,0 +1,5 @@
+variant_name,sample_size,completions,completion_rate_pct,relative_uplift_pct,z_statistic,p_value,avg_post_assessment_score,avg_time_spent_mins,avg_satisfaction_csat
+control_long_video,1000,150,15.0,0.0,0.0,1.00e+00,57.45,15.0,2.77
+variant_micro_video,1000,710,71.0,373.33,25.293,0.00e+00,83.28,17.49,3.52
+variant_micro_quiz,1000,795,79.5,430.0,28.889,0.00e+00,92.96,23.93,3.79
+variant_shorts_takehome,1000,314,31.4,109.33,8.688,0.00e+00,64.04,23.99,2.95

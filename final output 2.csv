@@ -1,0 +1,17 @@
+subject_domain,variant_name,sample_size,completions,completion_rate_pct,avg_post_assessment_score,avg_time_spent_mins,avg_satisfaction_csat,relative_uplift_pct
+Cloud Engineering,control_long_video,252,33,13.1,57.62,14.3,2.81,0.0
+Cloud Engineering,variant_micro_quiz,238,196,82.35,93.73,24.1,3.79,528.63
+Cloud Engineering,variant_micro_video,258,193,74.81,83.41,17.8,3.63,471.07
+Cloud Engineering,variant_shorts_takehome,236,81,34.32,64.91,25.4,3.0,161.98
+Data Science & ML,control_long_video,241,41,17.01,56.76,14.8,2.77,0.0
+Data Science & ML,variant_micro_quiz,264,205,77.65,92.22,23.6,3.84,356.5
+Data Science & ML,variant_micro_video,239,168,70.29,83.24,17.5,3.55,313.23
+Data Science & ML,variant_shorts_takehome,250,75,30.0,63.06,22.5,2.98,76.37
+Full Stack Web,control_long_video,264,33,12.5,58.28,15.3,2.77,0.0
+Full Stack Web,variant_micro_quiz,242,192,79.34,93.23,24.2,3.73,534.72
+Full Stack Web,variant_micro_video,241,167,69.29,82.93,17.2,3.38,454.32
+Full Stack Web,variant_shorts_takehome,254,73,28.74,63.59,23.1,2.83,129.92
+Product Management,control_long_video,243,43,17.7,57.04,15.6,2.73,0.0
+Product Management,variant_micro_quiz,256,202,78.91,92.75,23.9,3.81,345.82
+Product Management,variant_micro_video,262,182,69.47,83.51,17.5,3.52,292.49
+Product Management,variant_shorts_takehome,260,85,32.69,64.6,25.1,3.0,84.69
